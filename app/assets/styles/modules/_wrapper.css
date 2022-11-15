@@ -13,6 +13,17 @@
     padding-left: 0;
     padding-right: 0;
   }
+  /*To remove the padding in the Testemonial section for mobile*/
+  &--no-padding-until-medium {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atMedium {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+
   &--b-margin {
     margin-bottom: 1rem;
     @mixin atSmall {
