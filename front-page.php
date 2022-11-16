@@ -12,7 +12,7 @@
           media="(min-width:640px)">
         <img srcset="<?php echo get_stylesheet_directory_uri(); ?>/app/assets/images/hero--smaller.jpg 640w,
         <?php echo get_stylesheet_directory_uri(); ?>/app/assets/images/hero--medium-hi-dpi.jpg 1280w"
-          alt="coastal view of ocean and mountains" class="large-hero__image">
+          alt="coastal view of ocean and mountains">
       </picture>
       <div class="large-hero__text-content">
         <div class="wrapper">
