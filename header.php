@@ -7,7 +7,10 @@
   <header class="site-header">
       <div class="wrapper">
         <div class="site-header__logo">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/app/assets/images/icons/clear-view-escapes.svg">
+          <!--<div class="site-header__logo__graphic icon icon--clear-view-escapes">
+            Clear View Escapes
+          </div>-->
+         <img src="<?php echo get_stylesheet_directory_uri(); ?>/app/assets/images/icons/clear-view-escapes.svg">
         </div>
         <div class="site-header__menu-icon">
           <div class="site-header__menu-icon__middle">
