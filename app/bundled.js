@@ -16,7 +16,7 @@
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/styles.css */ \"./app/assets/styles/styles.css\");\n\r\n\n\n//# sourceURL=webpack://travel-site/./app/assets/scripts/App.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/styles.css */ \"./app/assets/styles/styles.css\");\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './modules/MobileMenu'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\r\n\r\n\r\nlet mobileMenu = new Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './modules/MobileMenu'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();\r\n\r\nif (false) {}\r\n\n\n//# sourceURL=webpack://travel-site/./app/assets/scripts/App.js?");
 
 /***/ }),
 
