@@ -24,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div id="our-beginning" class="page-section">
+    <div id="our-beginning" class="page-section" data-matching-link="#our-beginning-link">
       <div class="wrapper">
           <h2 class="headline headline--centered headline--light">The first trip we planned <strong>was our own.</strong></h2>
           <h3 class="headline headline--centered headline--orange headline--small headline--narrow headline--light">Ever since, we&rsquo;ve been working to make travel <strong>better for everyone</strong>.</h3>
@@ -57,7 +57,8 @@
           </div>
       </div>
     </div>
-    <div id="features" class="page-section page-section--blue">
+    <div id="features" class="page-section page-section--blue" 
+    data-matching-link="#features-link">
       <div class="wrapper">
         <h2 class="section-title"> <img class="section-title__icon"src="<?php echo get_stylesheet_directory_uri(); ?>/app/assets/images/icons/star.svg">Our <strong>Features</strong></h2>
         <div class="row row--gutters-large generic-content-container">
@@ -88,7 +89,7 @@
   </div>
 
   <div id="testimonials" class="page-section page-section--testimonials
-  page-section--no-b-padding-until-large">
+  page-section--no-b-padding-until-large" data-matching-link="#testimonials-link">
     <div class="wrapper wrapper--no-padding-until-large">
     <h2 class="section-title section-title--blue"><img class="section-title__icon " src="<?php echo get_stylesheet_directory_uri(); ?>/app/assets/images/icons/comment.svg">Real <strong>Testimonials</strong></h2>
     <div class="row row--gutters row--gutters-small row--equal-height-at-large
