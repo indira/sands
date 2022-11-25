@@ -1,0 +1,76 @@
+.event-summary {
+  position: relative;
+  padding-bottom: 2.5rem;
+  min-height: 77px;
+  margin-bottom: 1.25rem;
+  @mixin atSmall {
+    padding-left: 107px;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-top: 0.7rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    @mixin atSmall {
+      margin-top: 1rem;
+      text-align: left;
+      font-size: 1.875rem;
+    }
+    a {
+      color: $mainBlue;
+    }
+  }
+
+  &--center {
+    text-align: center;
+  }
+  &--beige {
+    background-color: $mainYellow;
+  }
+
+  &--blue {
+    background-color: $mainBlue;
+  }
+
+  &__date {
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    padding: 14px 0 11px 0;
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    line-height: 1;
+    transition: opacity 0.33s;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.22);
+    @mixin atSmall {
+      position: absolute;
+      left: 0;
+      width: 80px;
+    }
+  }
+
+  &__month {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    @mixin atSmall {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__day {
+    display: block;
+    font-size: 1.06rem;
+    font-weight: 500;
+    @mixin atSmall {
+      font-size: 2.02rem;
+      font-weight: 600;
+    }
+  }
+}

@@ -4,10 +4,12 @@
       <div class="page-banner__image" style="background-image:url(<?php echo get_theme_file_uri('/app/assets/images/ocean.jpg');?>)">
 
       </div>
-      <div class=" page-banner__text-content ">
+      <div class="page-banner__text-content">
           <div class="wrapper">
-            <h1 class="page-banner__title">Welcome to our Blog</h1>
-            <p class="page-banner__description">Keep up with our latest news.</p>
+            <h1 class="page-banner__title"><?php 
+              the_archive_title();
+            ?></h1>
+            <p class="page-banner__description"><?php the_archive_description();?></p>
           </div>
       </div>  
 </div>

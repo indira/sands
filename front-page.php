@@ -24,7 +24,46 @@
         </div>
       </div>
     </div>
-    <div id="our-beginning" class="page-section" data-matching-link="#our-beginning-link">
+
+   <!-- <div class="page-section">
+      <div class ="wrapper">-->
+        <div class="row row--gutters-large generic-content-container">
+          <div class="row__medium-6  page-section--topLbotR"> 
+          <h2 class="headline headline--centered headline--no-t-margin">Upcoming Events</h2>
+            <div class="event-summary">
+              <a class="event-summary__date event-summary--blue event-summary--center" href="#">
+                <span class="event-summary__month">Mar</span>
+                <span class="event-summary__day">25</span>  
+              </a>
+              <h5 class="event-summary__title"><a href="#">Poetry in the 100</a></h5>
+              <p>Bring poems you&rsquo;ve wrote to the 100 building this Tuesday for an open mic and snacks. <a href="#" class="nu gray">Learn more</a></p>
+            </div>
+            <p class="t-center no-margin"><a href="#" class="btn">View All Events</a></p>
+          </div>
+          <div class="row__medium-6 row--bgYellow page-section--topLbotR">
+            <h2 class="headline headline--centered headline--no-t-margin">From Our Blogs</h2>
+            <div class="event-summary">
+              <a class="event-summary__date event-summary--beige event-summary--center" href="#">
+                <span class="event-summary__month">Feb</span>
+                <span class="event-summary__day">04</span>  
+              </a>
+              <h5 class="event-summary__title"><a href="#">We Were Voted Best School</a></h5>
+              <p>For the 100th year in a row we are voted #1. <a href="#" class="nu gray">Read more</a></p>
+            </div>
+            <p class="t-center no-margin"><a href="#" class="btn btn--yellow">View All Blog Posts</a></p>
+          </div>
+        </div> 
+    <!--  </div>
+    </div>-->
+
+
+
+
+
+
+
+
+    <div id="our-beginning" class="page-section">
       <div class="wrapper">
           <h2 class="headline headline--centered headline--light">The first trip we planned <strong>was our own.</strong></h2>
           <h3 class="headline headline--centered headline--orange headline--small headline--narrow headline--light">Ever since, we&rsquo;ve been working to make travel <strong>better for everyone</strong>.</h3>
@@ -57,8 +96,7 @@
           </div>
       </div>
     </div>
-    <div id="features" class="page-section page-section--blue" 
-    data-matching-link="#features-link">
+    <div id="features" class="page-section page-section--blue" data-matching-link="#features-link">
       <div class="wrapper">
         <h2 class="section-title"> <img class="section-title__icon"src="<?php echo get_stylesheet_directory_uri(); ?>/app/assets/images/icons/star.svg">Our <strong>Features</strong></h2>
         <div class="row row--gutters-large generic-content-container">

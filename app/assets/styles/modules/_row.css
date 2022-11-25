@@ -8,6 +8,10 @@
     margin-bottom: 1rem;
   }
 
+  &--bgYellow {
+    background-color: #faf0ca;
+  }
+
   @mixin atMedium {
     display: grid;
     grid-template-columns: repeat(12, 1fr);

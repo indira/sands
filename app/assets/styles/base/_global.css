@@ -17,4 +17,13 @@ img {
 
 a {
   color: $mainOrange;
+  text-decoration: none;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.t-center {
+  text-align: center;
 }

@@ -31,4 +31,11 @@
   &--no-t-margin {
     margin-top: 0;
   }
+  a {
+    color: $mainBlue;
+  }
+  /*with bottom margin*/
+  &--w-b--margin {
+    margin-bottom: 1.25rem;
+  }
 }
