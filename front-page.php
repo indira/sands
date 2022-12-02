@@ -24,44 +24,74 @@
         </div>
       </div>
     </div>
-
-   <!-- <div class="page-section">
-      <div class ="wrapper">-->
-        <div class="row row--gutters-large generic-content-container">
-          <div class="row__medium-6  page-section--topLbotR"> 
+    <div class="row row--gutters-large generic-content-container">
+        <div class="row__medium-6 row--bgYellow page-section--topLbotR">
           <h2 class="headline headline--centered headline--no-t-margin">Upcoming Events</h2>
-            <div class="event-summary">
-              <a class="event-summary__date event-summary--blue event-summary--center" href="#">
-                <span class="event-summary__month">Mar</span>
-                <span class="event-summary__day">25</span>  
-              </a>
-              <h5 class="event-summary__title"><a href="#">Poetry in the 100</a></h5>
-              <p>Bring poems you&rsquo;ve wrote to the 100 building this Tuesday for an open mic and snacks. <a href="#" class="nu gray">Learn more</a></p>
+          <?php 
+            $today = date('Ymd');
+            $homepageEvents = new WP_Query(array(
+              'posts_per_page' => 2, //If posts_per_page is set to -1 that will return all the posts.
+              'post_type' => 'event',
+              //'orderby' => 'title', //ran for the random order,,the order is set to DESC by default
+              //'order' => 'ASC'
+              'orderby' => 'meta_value_num',
+              'order' => 'ASC',
+              'meta_query' => array(
+                array(
+                  'key' => 'event_date',
+                  'compare' => '>=',
+                  'value' => $today,
+                  'type' => 'numeric'
+                )
+              )
+            ));
+            while($homepageEvents->have_posts()){
+              $homepageEvents->the_post();?>
+              <div class="event-summary">
+                <a class="event-summary__date event-summary--beige event-summary--center" href="#">
+                <span class="event-summary__month"><?php
+                  $eventDate = new DateTime(get_field('event_date'));
+                  echo $eventDate->format('M');
+                ?></span>
+                  <span class="event-summary__day"><?php echo $eventDate -> format('d')?></span>  
+                </a>
+                <h5 class="event-summary__title"><a href="<?php the_permalink();?>"><?php the_title()?></a></h5>
+                <p><?php if(has_excerpt()){
+                    echo get_the_excerpt();
+                } else {
+                  echo wp_trim_words(get_the_content(),18);
+                } ?><a href="<?php the_permalink();?>" class="nu gray">Learn more</a></p>
             </div>
-            <p class="t-center no-margin"><a href="#" class="btn">View All Events</a></p>
+           <?php }
+
+          ?>
+           <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link('event');?>" class="btn">View All Events</a></p>
+        </div>
+        <div class="row__medium-6  page-section--topLbotR"> 
+          <h2 class="headline headline--centered headline--no-t-margin">From Our Blogs</h2>
+          <?php
+            $homepagePosts = new WP_Query(array(
+              'posts_per_page' => 2
+            ));
+            while( $homepagePosts->have_posts()){
+              $homepagePosts->the_post();?>
+              <div class="event-summary">
+                  <a class="event-summary__date event-summary--blue event-summary--center" href="<?php the_permalink();?>">
+                    <span class="event-summary__month"><?php the_time('M');?></span>
+                    <span class="event-summary__day"><?php the_time('d');?></span>  
+                  </a>
+                  <h5 class="event-summary__title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h5>
+                  <p><?php if(has_excerpt()){
+                    echo get_the_excerpt();
+                  } else {
+                    echo wp_trim_words(get_the_content(),18);
+                  }?><a href="<?php the_permalink();?>">Read more</a></p>
+              </div>
+            <?php  }  wp_reset_postdata();?>
+            <p class="t-center no-margin"><a href="<?php echo site_url('/blog')?>" class="btn btn--yellow" target="blank">View All Blog Posts</a></p>
           </div>
-          <div class="row__medium-6 row--bgYellow page-section--topLbotR">
-            <h2 class="headline headline--centered headline--no-t-margin">From Our Blogs</h2>
-            <div class="event-summary">
-              <a class="event-summary__date event-summary--beige event-summary--center" href="#">
-                <span class="event-summary__month">Feb</span>
-                <span class="event-summary__day">04</span>  
-              </a>
-              <h5 class="event-summary__title"><a href="#">We Were Voted Best School</a></h5>
-              <p>For the 100th year in a row we are voted #1. <a href="#" class="nu gray">Read more</a></p>
-            </div>
-            <p class="t-center no-margin"><a href="#" class="btn btn--yellow">View All Blog Posts</a></p>
-          </div>
+          
         </div> 
-    <!--  </div>
-    </div>-->
-
-
-
-
-
-
-
 
     <div id="our-beginning" class="page-section">
       <div class="wrapper">

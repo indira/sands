@@ -19,3 +19,27 @@ function sands_features(){
 
 }
 add_action('after_setup_theme','sands_features');
+
+function sands_adjust_queries($query){
+	//run only for the front end of the page not in the admin dashboard
+	//If post type archive is event show only one post per page
+	//Same like in the front-page-Upcoming Events 
+	if(!is_admin() AND is_post_type_archive('event') AND $query-> is_main_query()){
+		//$query -> set('posts_per_page', 1);
+		$today = date('Ymd');
+		$query-> set('meta_key','event_date');
+		$query-> set('orderby','meta_value_num');
+		$query->set('order','ASC');
+		$query->set('meta_query', array(
+			array(
+				'key' => 'event_date',
+				'compare' => '>=',
+				'value' => $today,
+				'type' => 'numeric'
+			)
+		));
+	}
+	
+
+}
+add_action('pre_get_posts','sands_adjust_queries');

@@ -1,8 +1,7 @@
 .event-summary {
   position: relative;
-  padding-bottom: 2.5rem;
   min-height: 77px;
-  margin-bottom: 1.25rem;
+  margin-bottom: 2.25rem;
   @mixin atSmall {
     padding-left: 107px;
   }
