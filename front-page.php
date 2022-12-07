@@ -20,7 +20,7 @@
           <h2 class="large-hero__sub-title">One trip away.</h2>
           <p class="large-hero__description">We create soul restoring journeys
             that inspire you to be you.</p>
-          <p><a href="#" class="btn btn--orange btn--large open-modal">Get Started Today</a></p>
+          <p><a href="<?php echo get_post_type_archive_link('program')?>" class="btn btn--orange btn--large open-modal">Find Your Major</a></p>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
             while($homepageEvents->have_posts()){
               $homepageEvents->the_post();?>
               <div class="event-summary">
-                <a class="event-summary__date event-summary--beige event-summary--center" href="#">
+                <a class="event-summary__date event-summary--blue event-summary--center" href="#">
                 <span class="event-summary__month"><?php
                   $eventDate = new DateTime(get_field('event_date'));
                   echo $eventDate->format('M');
@@ -76,7 +76,7 @@
             while( $homepagePosts->have_posts()){
               $homepagePosts->the_post();?>
               <div class="event-summary">
-                  <a class="event-summary__date event-summary--blue event-summary--center" href="<?php the_permalink();?>">
+                  <a class="event-summary__date event-summary--beige event-summary--center" href="<?php the_permalink();?>">
                     <span class="event-summary__month"><?php the_time('M');?></span>
                     <span class="event-summary__day"><?php the_time('d');?></span>  
                   </a>

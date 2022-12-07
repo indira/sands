@@ -9,37 +9,46 @@ function SandS_files(){
 }
 add_action('wp_enqueue_scripts','SandS_files');
 
+
 //Adding title tag on the top of the page
 function sands_features(){
+	/*title-tag*/
+  add_theme_support('title-tag');
+  /*Adding Post-thumbnails to the post type*/
+  add_theme_support('post-thumbnails');
+  add_image_size('professorLandscape',400,260, true);
+  add_image_size('professorPortrait',480,650,true);
+  add_image_size('pageBanner',1500,350,true);
 	//Adding Menu to the dashboard
 	register_nav_menu('headerMenuLocation',"Header Menu Location");
 	register_nav_menu('footerLocationOne',"Footer Location One");
 	register_nav_menu('footerLocationTwo',"Footer Location Two");
-	add_theme_support('title-tag');
-
+	
 }
 add_action('after_setup_theme','sands_features');
 
 function sands_adjust_queries($query){
-	//run only for the front end of the page not in the admin dashboard
-	//If post type archive is event show only one post per page
-	//Same like in the front-page-Upcoming Events 
-	if(!is_admin() AND is_post_type_archive('event') AND $query-> is_main_query()){
-		//$query -> set('posts_per_page', 1);
-		$today = date('Ymd');
-		$query-> set('meta_key','event_date');
-		$query-> set('orderby','meta_value_num');
-		$query->set('order','ASC');
-		$query->set('meta_query', array(
-			array(
-				'key' => 'event_date',
-				'compare' => '>=',
-				'value' => $today,
-				'type' => 'numeric'
-			)
-		));
-	}
-	
-
+	/*Program Archive Posts*/
+  /*set the no of posts equal to 1 only on the program posts*/
+  if(!is_admin() AND is_post_type_archive('program') AND is_main_query()){
+    $query -> set('orderby', 'title');
+    $query -> set('order','ASC');
+  $query -> set('posts_per_page', -1);
+  } 
+  /*Event Archive Posts*/
+  if(!is_admin() AND is_post_type_archive('event') AND is_main_query()){
+    $today = date('Ymd');
+    $query -> set('meta_key','event_date');
+    $query -> set('orderby','meta_value_num');
+    $query -> set('order','ASC');
+    $query -> set('meta_query',array(
+              array(
+                'key' => 'event_date',
+                'compare' => '>=',
+                'value' => $today,
+                'type' => 'numeric'
+              )
+            ));
+  } 
 }
 add_action('pre_get_posts','sands_adjust_queries');

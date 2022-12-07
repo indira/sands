@@ -2,6 +2,7 @@
 @import "base/_variables";
 @import "base/_global";
 @import "base/_mixins";
+@import "base/_utility-classes.css";
 @import "modules/_large-hero";
 @import "modules/_btn";
 @import "modules/_wrapper";
@@ -21,3 +22,4 @@
 @import "modules/_post-item.css";
 @import "modules/_event-summary.css";
 @import "modules/_link-list.css";
+@import "modules/_professor-card.css";
