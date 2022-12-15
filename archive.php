@@ -1,18 +1,11 @@
 <?php get_header();
+  pageBanner(array(
+    'title' => get_the_archive_title(),
+    'subtitle' => get_the_archive_description(),
+    'photo' => ''
+  ));
 ?>
-<div class="page-banner ">
-      <div class="page-banner__image" style="background-image:url(<?php echo get_theme_file_uri('/app/assets/images/ocean.jpg');?>)">
 
-      </div>
-      <div class="page-banner__text-content">
-          <div class="wrapper">
-            <h1 class="page-banner__title"><?php 
-              the_archive_title();
-            ?></h1>
-            <p class="page-banner__description"><?php the_archive_description();?></p>
-          </div>
-      </div>  
-</div>
 <div class="page-section--small wrapper wrapper--medium"> 
 <?php while(have_posts()){
    the_post();?>

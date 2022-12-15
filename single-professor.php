@@ -1,21 +1,15 @@
 <?php
 get_header();
   while(have_posts()){
-    the_post();?>
-    <div class="page-banner ">
-      <div class="page-banner__image" style="background-image:url(<?php 
-      
-      $pageBannerImage = get_field('page_banner_background_image');
-      echo $pageBannerImage['sizes']['pageBanner'];
-      ?>)">
-      </div>
-      <div class=" page-banner__text-content ">
-          <div class="wrapper">
-            <h1 class="page-banner__title"><?php the_title()?></h1>
-            <p class="page-banner__description"><?php the_field('page_banner_subtitle');?></p>
-          </div>
-      </div>  
-  </div>
+    the_post();
+    pageBanner(array(
+      'title' => '',
+      'subtitle' => '',
+      'photo'=> ''
+  
+    ));
+    ?>
+    
     <div class="page-section--small wrapper wrapper--medium"> 
         <div class="row row--gutters-large generic-content-container"">
           <div class='row__medium-4'>

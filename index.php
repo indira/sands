@@ -1,16 +1,12 @@
 <?php get_header();
-?>
-<div class="page-banner ">
-      <div class="page-banner__image" style="background-image:url(<?php echo get_theme_file_uri('/app/assets/images/ocean.jpg');?>)">
+  pageBanner(array(
+    'title' => 'Welcome to our Blog',
+    'subtitle' => 'Keep up with our latest news.',
+    'photo' => ''
 
-      </div>
-      <div class=" page-banner__text-content ">
-          <div class="wrapper">
-            <h1 class="page-banner__title">Welcome to our Blog</h1>
-            <p class="page-banner__description">Keep up with our latest news.</p>
-          </div>
-      </div>  
-</div>
+  ));
+?>
+
 <div class="page-section--small wrapper wrapper--medium"> 
 <?php while(have_posts()){
    the_post();?>

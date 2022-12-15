@@ -132,4 +132,48 @@
       transform: scale(1);
     }
   }
+
+  &__search-trigger {
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 6px;
+    right: 16px;
+
+    @mixin atSmall {
+      top: 4px;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__menu-trigger {
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    position: absolute;
+    z-index: 10;
+    top: 7px;
+    right: 46px;
+
+    @mixin atSmall {
+      top: 5px;
+      font-size: 1.4rem;
+    }
+
+    @mixin atMedium {
+      display: none;
+    }
+  }
+
+  &__util {
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    @mixin atMedium {
+      padding: 10px 20px 10px 20px;
+      float: inline-start;
+      font-size: 20px;
+    }
+  }
 }

@@ -5,7 +5,8 @@
             class="btn btn--orange open-modal">Get in Touch</a>
         </p>
       </div>
-    </footer>
+</footer>
+
 <?php
   wp_footer();
 ?>

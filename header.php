@@ -12,13 +12,15 @@
           <!--<div class="site-header__logo__graphic icon icon--clear-view-escapes">
             Clear View Escapes
           </div>-->
-         <a href="<?php echo site_url('')?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/app/assets/images/icons/clear-view-escapes.svg"></a>
+         <a href="<?php echo site_url('')?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/app/assets/images/icons/clear-view-escapes.svg" alt="svgimage" ></a>
         </div>
         <div class="site-header__menu-icon">
           <div class="site-header__menu-icon__middle">
           </div>
         </div>
         <div class="site-header__menu-content">
+            <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
+          
           <div class="site-header__btn-container">
             <a class="btn btn--small open-modal" href="#">Get in Touch</a>
           </div>
@@ -29,6 +31,7 @@
 
               ));
             ?>
+            
            <!-- <ul>
               <li><a href="<?php echo site_url('/about-us')?>" id ="our-beginning-link">About Us</a></li>
               <li><a href="#">Programs</a></li>
@@ -37,6 +40,10 @@
               <li><a href="#">Blog</a></li>
             </ul>-->
           </nav>
+          <div class="site-header__util">
+            <span class="search-trigger js-search-trigger"><i class="fa fa-search" aria-hidden="true"></i></span>
+          </div>
         </div>
+        
       </div>
     </header>

@@ -1,18 +1,14 @@
 <?php
 get_header();
   while(have_posts()){
-    the_post();?>
-    <div class="page-banner ">
-      <div class="page-banner__image" style="background-image:url(<?php echo get_theme_file_uri('/app/assets/images/ocean.jpg');?>)">
-
-      </div>
-      <div class=" page-banner__text-content ">
-          <div class="wrapper">
-            <h1 class="page-banner__title"><?php the_title()?></h1>
-            <p class="page-banner__description">DONT FORGET TO REPLACE ME LATER.</p>
-          </div>
-      </div>  
-   </div>
+    the_post();
+    pageBanner(array(
+      'title' => '',
+      'subtitle' => '',
+      'photo'=> ''
+  
+    ));
+    ?>
    <div class="wrapper wrapper--medium"> 
       <div class="metabox metabox--with-home-link">
         <p>
@@ -49,14 +45,14 @@ get_header();
               while($relatedProfessors->have_posts()){
                 $relatedProfessors->the_post();?>
                 <li class="professor-cards__list-item">
-                  <a class="professor-cards" href="<?php the_permalink();?>">
+                  <a href="<?php the_permalink();?>">
                     <img class="professor-cards__image" src="<?php the_post_thumbnail_url('professorLandscape');?>"> 
                     <span class="professor-cards__name"><?php the_title()?></span> 
-                </a>
+                  </a>
                 </li>
-           <?php }
+                <?php }
               echo '</ul>';
-            }
+              }
 
             wp_reset_postdata();//Reseting the post id...if we dont write this code the code below wont be displayed
             
@@ -87,23 +83,9 @@ get_header();
             echo '<h2 class="headline headline--medium">Upcoming ' .get_the_title().' Events</h2>';
 
             while($homepageEvents->have_posts()){
-              $homepageEvents->the_post();?>
-              <div class="event-summary">
-                <a class="event-summary__date event-summary--blue event-summary--center" href="#">
-                <span class="event-summary__month"><?php
-                  $eventDate = new DateTime(get_field('event_date'));
-                  echo $eventDate->format('M');
-                ?></span>
-                  <span class="event-summary__day"><?php echo $eventDate -> format('d')?></span>  
-                </a>
-                <h5 class="event-summary__title"><a href="<?php the_permalink();?>"><?php the_title()?></a></h5>
-                <p><?php if(has_excerpt()){
-                    echo get_the_excerpt();
-                } else {
-                  echo wp_trim_words(get_the_content(),18);
-                } ?><a href="<?php the_permalink();?>" class="nu gray">Learn more</a></p>
-            </div>
-           <?php }
+              $homepageEvents->the_post();
+              get_template_part('template-parts/content-event');
+              }
             }
 
           ?>
