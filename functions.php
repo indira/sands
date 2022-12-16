@@ -1,4 +1,16 @@
 <?php 
+require get_theme_file_path("/inc/search-route.php");
+
+//Adding custom API authorName to the post
+function sands_custom_rest(){
+  register_rest_field('post','authorName',array(
+    'get_callback' => function(){
+      return get_author_name();
+    }
+  ));
+}
+add_action("rest_api_init","sands_custom_rest");
+
 //Page banner function for all the pages
 function pageBanner($args = NULL){
   if(!$args['title']){
