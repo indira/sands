@@ -21,7 +21,7 @@ get_header();
     </div>
     <div class="page-section--small wrapper wrapper--medium"> 
       <div class=" generic-content-container">
-        <?php the_content();?>
+        <?php the_field('main_body_content')?>
         <?php 
             $relatedProfessors = new WP_Query(array(
               'posts_per_page' => -1, //If posts_per_page is set to -1 that will return all the posts.
@@ -42,17 +42,17 @@ get_header();
               echo '<hr class="section-break">';
               echo '<h2 class="headline headline--medium">'.get_the_title().' Professors</h2>';
               echo '<ul class="professor-cards">';
-              while($relatedProfessors->have_posts()){
-                $relatedProfessors->the_post();?>
-                <li class="professor-cards__list-item">
-                  <a href="<?php the_permalink();?>">
-                    <img class="professor-cards__image" src="<?php the_post_thumbnail_url('professorLandscape');?>"> 
-                    <span class="professor-cards__name"><?php the_title()?></span> 
-                  </a>
-                </li>
+                while($relatedProfessors->have_posts()) {
+                  $relatedProfessors->the_post(); ?>
+                  <li class="professor-card__list-item">
+                    <a class="professor-card" href="<?php the_permalink(); ?>">
+                      <img class="professor-card__image" src="<?php the_post_thumbnail_url('professorLandscape') ?>">
+                      <span class="professor-card__name"><?php the_title(); ?></span>
+                    </a>
+                  </li>
                 <?php }
-              echo '</ul>';
-              }
+                echo '</ul>';
+                }
 
             wp_reset_postdata();//Reseting the post id...if we dont write this code the code below wont be displayed
             

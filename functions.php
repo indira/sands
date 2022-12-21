@@ -1,15 +1,18 @@
 <?php 
-require get_theme_file_path("/inc/search-route.php");
-
 //Adding custom API authorName to the post
+require get_theme_file_path('/inc/search-route.php');
+
 function sands_custom_rest(){
   register_rest_field('post','authorName',array(
-    'get_callback' => function(){
-      return get_author_name();
-    }
+    'get_callback' => function() {return count_user_posts(get_current_user_id(),'note');}
+  ));
+   register_rest_field('note','userNoteCount',array(
+    'get_callback' => function() {return get_current_user_id();}
   ));
 }
-add_action("rest_api_init","sands_custom_rest");
+
+add_action('rest_api_init', 'sands_custom_rest');
+
 
 //Page banner function for all the pages
 function pageBanner($args = NULL){
@@ -53,7 +56,8 @@ function SandS_files(){
 	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
   wp_localize_script('parent-js','sandsData',array(
-    'root_url' => get_site_url()
+    'root_url' => get_site_url(),
+    'nonce' =>wp_create_nonce('wp_rest')
   ));
 }
 add_action('wp_enqueue_scripts','SandS_files');

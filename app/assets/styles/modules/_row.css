@@ -1,4 +1,7 @@
 .row {
+  &--margin {
+    margin-right: 20px;
+  }
   &--t-padding {
     padding-top: 80px;
   }
